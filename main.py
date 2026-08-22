@@ -5,7 +5,7 @@ from pydantic import BaseModel,Field
 from typing import Literal
 from fastapi.middleware.cors import CORSMiddleware
 
-model=joblib.load('D:\\C Data\\Users\\Admin\\Desktop\\Mental Health Score Predictor\\Mental_Health_Model.pkl')
+model = joblib.load('Mental_Health_Model.pkl')
 app=FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"]) 
 # it is used to connect frontend (using HTML,CSS and JS) and backend (FastAPI)
