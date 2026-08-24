@@ -21,9 +21,9 @@ class ResponseValidation(BaseModel): # it's a pydantic model responsible for res
 class StudentData(BaseModel): # it's a pydantic model responsible for input data validation
     age:int=Field(...,ge=10,le=100)
     gender:Literal['Male','Female']
-    country:str
+    country:Literal['Other','India','USA','Canada','Australia','UK','Germany','Mexico','Turkey','France']
     academic_level:Literal['Undergraduate','Graduate','High School']
-    most_used_platform:Literal['Instagram','Facebook','Twitter','Snapchat','TikTok','LinkedIn','Youtube','WhatsApp','LINE','VKontakte','KakaoTalk','WeChat']
+    most_used_platform:Literal['Instagram','Facebook','Twitter','Snapchat','TikTok','LinkedIn','YouTube','WhatsApp','LINE','VKontakte','KakaoTalk','WeChat']
     purpose_of_use:Literal['Networking','Entertainment','Education','News']
     avg_daily_usage_hour:float=Field(...,ge=0,le=24)
     daily_unlocks:int=Field(...,ge=0,le=24)
@@ -35,12 +35,11 @@ class StudentData(BaseModel): # it's a pydantic model responsible for input data
     
 @app.post('/predict', response_model=ResponseValidation)
 def predict(data:StudentData):
-    country_group=data.country if data.country in top_countries else 'Other'
     input_data=pd.DataFrame([{
             'Age':data.age,
             'Gender':data.gender,
-            'Country':data.country,
-            'Grouped_Country':country_group,
+            # 'Country':data.country,
+            'Grouped_Country':data.country,
             'Academic_Level':data.academic_level,
             'Most_Used_Platform':data.most_used_platform,
             'Purpose_Of_Use':data.purpose_of_use,
