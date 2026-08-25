@@ -26,7 +26,7 @@ class StudentData(BaseModel): # it's a pydantic model responsible for input data
     most_used_platform:Literal['Instagram','Facebook','Twitter','Snapchat','TikTok','LinkedIn','YouTube','WhatsApp','LINE','VKontakte','KakaoTalk','WeChat']
     purpose_of_use:Literal['Networking','Entertainment','Education','News']
     avg_daily_usage_hour:float=Field(...,ge=0,le=24)
-    daily_unlocks:int=Field(...,ge=0,le=24)
+    daily_unlocks:int=Field(...,ge=0,le=50)
     study_hours:float=Field(...,ge=0,le=24)
     physical_activity_hours:float=Field(...,ge=0,le=24)
     sleep_hours_per_night:float=Field(...,ge=0,le=24)
