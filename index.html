@@ -434,21 +434,22 @@
               <option value="Female">Female</option>
             </select>
           </div>
+          <!-- Is code ko HTML me Country waale field ki jagah replace karein -->
           <div class="field">
-            <label for="country">Country</label>
-            <input list="countryList" id="country" name="country" placeholder="e.g. India" required />
-            <datalist id="countryList">
-              <option value="India"></option>
-              <option value="USA"></option>
-              <option value="Canada"></option>
-              <option value="Australia"></option>
-              <option value="UK"></option>
-              <option value="Germany"></option>
-              <option value="Mexico"></option>
-              <option value="Turkey"></option>
-              <option value="France"></option>
-              <option value="Other"></option>
-            </datalist>
+          <label for="country">Country</label>
+          <select id="country" name="country" required>
+          <option value="" disabled selected>Choose one</option>
+          <option value="India">India</option>
+          <option value="USA">USA</option>
+          <option value="Canada">Canada</option>
+          <option value="Australia">Australia</option>
+          <option value="UK">UK</option>
+          <option value="Germany">Germany</option>
+          <option value="Mexico">Mexico</option>
+          <option value="Turkey">Turkey</option>
+          <option value="France">France</option>
+          <option value="Other">Other</option>
+          </select>
           </div>
           <div class="field">
             <label for="academic_level">Academic level</label>
@@ -550,7 +551,7 @@
 </div>
 
 <script>
-  const API_URL = "https://mansik-santulan-score-7hdx.onrender.com";
+  const API_URL = "http://127.0.0.1:8000";
 
   // ---- EDIT THESE TWO IF YOUR MODEL'S OUTPUT RANGE ISN'T 0–10 ----
   // Run one prediction, check the number FastAPI returns, then set the
