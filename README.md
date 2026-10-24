@@ -45,6 +45,10 @@ This project processes student mental health data sourced from Kaggle. It implem
    ```bash
    pip install -r requirements.txt
 
-3. **Run the Application**:
+3. **Start the Backend first**:
    ```bash
-   python main.py
+   uvicorn main:app --reload
+
+4. **Now, Open the html file After Starting the Backend**:
+   ```bash
+   just simple open it by double clicking
