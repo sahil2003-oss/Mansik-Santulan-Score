@@ -50,5 +50,5 @@ This project processes student mental health data sourced from Kaggle. It implem
    uvicorn main:app --reload
 
 4. **Now, Open the html file After Starting the Backend**:
-   ```bash
-   just simple open it by double clicking
+   
+   * just simple open it by double clicking
